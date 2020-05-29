@@ -4,7 +4,7 @@
 */
 class Assets {
 
-	public function load($param) {
+	public static function load($param) {
 		$assets_dir = 'app/config/Assets.php'; //файл подключения
 		if(file_exists($assets_dir))
 		{

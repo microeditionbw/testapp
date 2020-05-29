@@ -52,7 +52,7 @@ class CartModel extends Model
 		}
 	}
 
-	function productExistById($id)
+	static function productExistById($id)
 	{
 		if(isset($_SESSION['cart']))
 		{

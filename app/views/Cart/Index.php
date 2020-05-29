@@ -30,7 +30,7 @@
                                                 <input class="cart-plus-minus-box" type="text" name="qtybutton" value="<?= $product['count'] ?>">
                                             </div>
                                         </td>
-                                        <td class="product-subtotal">$<?= $product['price'] * $product['count'] ?></td>
+                                        <td class="product-subtotal">$<?= intval($product['price']) * intval($product['count']) ?></td>
                                         <td class="product-remove"><a href="#"><i class="ti-trash"></i></a></td>
                                     </tr>
 <?php endforeach; endif;?>

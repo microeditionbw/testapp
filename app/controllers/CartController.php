@@ -16,7 +16,7 @@ class CartController extends Controller
 	{
 		//Dev::debug($_SESSION);
 		$this->view->layout = 'cart';
-		$this->view->render("Корзина", ['products'=>$_SESSION['cart']]);
+		$this->view->render("Корзина", ['products'=>isset($_SESSION['cart']) ? $_SESSION['cart'] : 0]);
 	}
 
 	function actionAdd()
@@ -56,7 +56,7 @@ class CartController extends Controller
 		{
 			if($this->model->changeCount($this->getProduct()->id, $this->post()['count']))
 			{
-				echo  $this->model->productGetPriceById($this->getProduct()->id) * $this->getProduct()->getCount();
+				echo  intval($this->model->productGetPriceById($this->getProduct()->id)) * intval($this->getProduct()->getCount());
 			}
 		}
 	}
